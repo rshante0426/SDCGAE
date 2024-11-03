@@ -1,4 +1,4 @@
-# Structural Dissimilarity Compensation Graph Autoencoder (SDCGA) for Multimodal Change Detection
+# SDC-GAE: Structural Difference Compensation Graph Autoencoder for Unsupervised Multimodal Change Detection
 
 This repository contains the implementation of the **Structural Dissimilarity Compensation Graph Autoencoder (SDCGA)** for multimodal change detection, specifically designed for detecting land-cover changes using heterogeneous data such as optical and SAR images.
 
@@ -122,3 +122,36 @@ Example of adjusting parameters:
 
 ```bash
 python sdcga.py --lr 0.005 --epoch 500 --num_heads 8
+
+Results
+After running the script, you will obtain:
+
+Reconstructed Images: The model reconstructs input images which can be visualized.
+Change Intensity Maps: Visual representations of change intensities.
+Binary Change Maps: Thresholded maps showing detected changes.
+Performance Metrics: Prints Overall Accuracy, Kappa coefficient, and F1 score.
+Visualizations: Plots of images, change maps, and error maps.
+
+Example
+Here’s a step-by-step example to get you started:
+
+Prepare the data:
+
+1.Place your images in a directory, for example:
+data/
+├── image_t1.tif
+├── image_t2.tif
+└── ref_gt.tif
+2.Run the script with your data:
+python sdcga.py --image_t1_path data/image_t1.tif \
+                --image_t2_path data/image_t2.tif \
+                --ref_gt_path data/ref_gt.tif
+3.View the results:
+
+The script will display and save various plots.
+Check the console output for performance metrics.
+
+References
+If you use this code in your research, please cite:
+
+SDC-GAE: Structural Difference Compensation Graph Autoencoder for Unsupervised Multimodal Change Detection DOI:10.1109/TGRS.2024.3396141
